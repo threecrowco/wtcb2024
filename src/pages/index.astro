@@ -1,6 +1,7 @@
 ---
 import Header from "../components/structure/Header.astro";
 import Footer from "../components/structure/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <html lang="en">
@@ -20,6 +21,7 @@ import Footer from "../components/structure/Footer.astro";
             content={Astro.generator}
         />
         <title>Astro</title>
+        <ViewTransitions />
         <style>
             .cta-section {
                 position: relative;
@@ -52,10 +54,10 @@ import Footer from "../components/structure/Footer.astro";
                 <source src="/path/to/your/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div class="cta-content">
-                <h1>Welcome to the White Trash Family Christmas 2024</h1>
-                <p>This is the home of the White Trash Family Christmas 2024.</p>
-            </div>
+                <div class="cta-content">
+                    <h1>Welcome to the White Trash Family Christmas 2024</h1>
+                    <p>This is the home of the White Trash Family Christmas 2024.</p>
+                </div>
         </section>
         <Footer />
     </body>
