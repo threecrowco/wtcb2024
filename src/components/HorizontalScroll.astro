@@ -12,7 +12,7 @@ const { images } = Astro.props;
     >
         {
             images.map((image, index) => (
-                <div class="w-1/6 flex-shrink-0 p-2 aspect-square">
+                <div class="w-1/2 md:w-1/4 lg:w-1/6 flex-shrink-0 p-2 aspect-square">
                     <img
                         src={image}
                         alt={`Image ${index + 1}`}
