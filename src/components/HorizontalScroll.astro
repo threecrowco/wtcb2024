@@ -1,0 +1,16 @@
+---
+export interface Props {
+  images: string[];
+}
+const { images } = Astro.props;
+---
+
+<div class="overflow-x-auto snap-x snap-mandatory">
+  <div class="flex snap-x space-x-4">
+    {images.map((image) => (
+      <div class="w-64 h-48 snap-start bg-gray-200 rounded-lg overflow-hidden">
+        <img src={image} alt="Image" class="w-full h-full object-cover"/>
+      </div>
+    ))}
+  </div>
+</div>

@@ -1,11 +1,29 @@
 ---
 import Layout from "../components/layouts/Layout.astro";
+import HorizontalScroll from '../components/HorizontalScroll.astro';
+
+const images = [
+  "https://via.placeholder.com/640x480/007bff/ffffff?text=Image+1",
+  "https://via.placeholder.com/640x480/28a745/ffffff?text=Image+2",
+  "https://via.placeholder.com/640x480/dc3545/ffffff?text=Image+3",
+  "https://via.placeholder.com/640x480/17a2b8/ffffff?text=Image+4",
+  "https://via.placeholder.com/640x480/ffc107/ffffff?text=Image+5",
+  "https://via.placeholder.com/640x480/007bff/ffffff?text=Image+6",
+  "https://via.placeholder.com/640x480/28a745/ffffff?text=Image+7",
+  "https://via.placeholder.com/640x480/dc3545/ffffff?text=Image+8",
+  "https://via.placeholder.com/640x480/17a2b8/ffffff?text=Image+9",
+  "https://via.placeholder.com/640x480/ffc107/ffffff?text=Image+10",
+  "https://via.placeholder.com/640x480/007bff/ffffff?text=Image+11",
+  "https://via.placeholder.com/640x480/28a745/ffffff?text=Image+12",
+];
 ---
+
 <Layout>
-    <section class="cta-section bg-slate-500 text-white py-12 flex flex-col items-center justify-center">
-        <div class="cta-content">
-            <h1>Welcome to the White Trash Family Christmas 2024</h1>
-            <p>This is the home of the White Trash Family Christmas 2024.</p>
-        </div>
-    </section>
+  <section class="cta-section bg-slate-500 text-white py-12 flex flex-col items-center justify-center">
+    <div class="cta-content">
+      <h1>Welcome to the White Trash Family Christmas 2024</h1>
+      <p>This is the home of the White Trash Family Christmas 2024.</p>
+    </div>
+  </section>
+  <HorizontalScroll images={images} />
 </Layout>
