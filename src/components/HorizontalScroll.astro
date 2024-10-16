@@ -32,6 +32,10 @@ const { images } = Astro.props;
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+    #scrollContainer {
+        scroll-behavior: smooth;
+    }
 </style>
 
 <script>
@@ -40,7 +44,10 @@ const { images } = Astro.props;
     if (scrollContainer) {
         scrollContainer.addEventListener("wheel", (evt) => {
             evt.preventDefault();
-            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.scrollTo({
+                left: scrollContainer.scrollLeft + evt.deltaY,
+                behavior: "smooth",
+            });
         });
     }
 </script>
