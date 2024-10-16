@@ -1,36 +1,11 @@
 ---
-import Header from "../components/structure/Header.astro";
-import Footer from "../components/structure/Footer.astro";
-import { ViewTransitions } from "astro:transitions";
+import Layout from "../components/layouts/Layout.astro";
 ---
-
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/favicon.svg"
-        />
-        <meta
-            name="viewport"
-            content="width=device-width"
-        />
-        <meta
-            name="generator"
-            content={Astro.generator}
-        />
-        <title>Astro</title>
-        <ViewTransitions />
-    </head>
-    <body class="antialiased">
-        <Header />
-        <section class="cta-section bg-slate-500 text-white py-12 flex flex-col items-center justify-center">
-                <div class="cta-content">
-                    <h1>Welcome to the White Trash Family Christmas 2024</h1>
-                    <p>This is the home of the White Trash Family Christmas 2024.</p>
-                </div>
-        </section>
-        <Footer />
-    </body>
-</html>
+<Layout>
+    <section class="cta-section bg-slate-500 text-white py-12 flex flex-col items-center justify-center">
+        <div class="cta-content">
+            <h1>Welcome to the White Trash Family Christmas 2024</h1>
+            <p>This is the home of the White Trash Family Christmas 2024.</p>
+        </div>
+    </section>
+</Layout>
