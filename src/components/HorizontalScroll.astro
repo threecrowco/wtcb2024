@@ -6,10 +6,13 @@ const { images } = Astro.props;
 ---
 
 <div class="relative w-full overflow-hidden">
-    <div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+    <div
+        id="scrollContainer"
+        class="flex overflow-x-auto scrollbar-hide"
+    >
         {
             images.map((image, index) => (
-                <div class="w-1/4 flex-shrink-0 snap-start p-2 aspect-square">
+                <div class="w-1/6 flex-shrink-0 p-2 aspect-square">
                     <img
                         src={image}
                         alt={`Image ${index + 1}`}
@@ -22,11 +25,22 @@ const { images } = Astro.props;
 </div>
 
 <style>
-    /* .scrollbar-hide::-webkit-scrollbar {
+    .scrollbar-hide::-webkit-scrollbar {
         display: none;
-    } */
-    /* .scrollbar-hide {
+    }
+    .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
-    } */
+    }
 </style>
+
+<script>
+    const scrollContainer = document.getElementById("scrollContainer");
+
+    if (scrollContainer) {
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+        });
+    }
+</script>
