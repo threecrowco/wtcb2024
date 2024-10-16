@@ -1,16 +1,32 @@
 ---
 export interface Props {
-  images: string[];
+    images: string[];
 }
 const { images } = Astro.props;
 ---
 
-<div class="overflow-x-auto snap-x snap-mandatory">
-  <div class="flex snap-x space-x-4">
-    {images.map((image) => (
-      <div class="w-1/6 h-full snap-start bg-gray-200 rounded-lg overflow-hidden">
-        <img src={image} alt="Image" class="w-full h-full object-cover"/>
-      </div>
-    ))}
-  </div>
+<div class="relative w-full overflow-hidden">
+    <div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+        {
+            images.map((image, index) => (
+                <div class="w-1/4 flex-shrink-0 snap-start p-2 aspect-square">
+                    <img
+                        src={image}
+                        alt={`Image ${index + 1}`}
+                        class="w-full h-full object-cover rounded-lg"
+                    />
+                </div>
+            ))
+        }
+    </div>
 </div>
+
+<style>
+    /* .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    } */
+    /* .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    } */
+</style>
